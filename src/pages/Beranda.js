@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, Image } from 'react-native';
 import { Card } from 'react-native-elements';
 import beranda from '../data/beranda';
 
-class Beranda extends Component {
+class Beranda extends Component {  
   constructor(props) {
     super(props);
 
@@ -11,6 +11,10 @@ class Beranda extends Component {
       data: '',
     }
   }
+
+  static navigationOptions = {
+    drawerLabel: 'Home',
+  };
 
   componentWillMount() {
     this.setState({ data: beranda });
@@ -29,6 +33,7 @@ class Beranda extends Component {
           keyExtractor={(item, key) => key}
           renderItem={({ item, index }) => (
             <Card>
+              <Image source={{ uri: item.image}} style={{ width: 100, height: 100 }} />
               <Text>
                 {item.content}
               </Text>

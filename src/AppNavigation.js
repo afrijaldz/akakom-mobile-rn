@@ -38,6 +38,7 @@ const AppNavigation = StackNavigator({
   navigationOptions: {
     headerStyle: {
       backgroundColor: '#00aced',
+      color: '#fff',
     },
   }
 });

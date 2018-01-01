@@ -19,6 +19,7 @@ class Beranda extends Component {
       name='home'
       color='#00aced' />
     ),
+    headerTitle: 'Beranda',
     // headerLeft: <Icon iconStyle={{ paddingLeft: 10 }} name="menu" onPress={() => this.props.navigation.navigate('DrawerToggle')} />
   }
 

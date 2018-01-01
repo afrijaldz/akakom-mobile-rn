@@ -66,6 +66,14 @@ class Profil extends Component {
                 {profil.misi}
               </Text>
           </Card>
+          <Card style={{ marginBottom: 20 }}>
+            <Text style={{ fontSize: 24, marginBottom: 10 }}>Tujuan</Text>
+            <View style={{ alignItems: 'center' }}>
+            </View>
+              <Text>
+                {profil.tujuan}
+              </Text>
+          </Card>
         </View>
       </ScrollView>
     );

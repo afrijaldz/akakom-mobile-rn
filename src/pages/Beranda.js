@@ -28,10 +28,6 @@ class Beranda extends Component {
     headerLeft: <Icon name="menu" color='#fff' iconStyle={{ paddingLeft: 10 }} onPress={() => navigation.navigate('DrawerToggle')} />
   })
 
-  componentWillMount() {
-    this.setState({ data: beranda });
-  }
-
   componentDidMount() {
     this.setState({ data: beranda.data });
     console.log(this.state.data);

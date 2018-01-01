@@ -10,7 +10,6 @@ import Info from './pages/Info';
 import Profil from './pages/Profil';
 import Tautan from './pages/Tautan';
 import Detail from './pages/Detail';
-import WebInterface from './pages/WebInterface';
 
 const { width: viewPortWidth, height: viewPortHeight } = Dimensions.get('window');
 
@@ -36,7 +35,6 @@ const AppNavigation = StackNavigator({
   Profil: { screen: DrawerNavigation },
   Tautan: { screen: DrawerNavigation },
   Detail: { screen: DrawerNavigation },
-  Web: { screen: WebInterface }
 }, {
   initialRouteName: 'Tautan',
   navigationOptions: {

@@ -10,6 +10,7 @@ import Info from './pages/Info';
 import Profil from './pages/Profil';
 import Tautan from './pages/Tautan';
 import Detail from './pages/Detail';
+import WebInterface from './pages/WebInterface';
 
 const { width: viewPortWidth, height: viewPortHeight } = Dimensions.get('window');
 
@@ -30,13 +31,14 @@ const DrawerNavigation = DrawerNavigator({
 // StackNavigation
 const AppNavigation = StackNavigator({
   Beranda: { screen: DrawerNavigation },
-  Galeri: { screen: Galeri },
-  Info: { screen: Info },
-  Profil: { screen: Profil },
-  Tautan: { screen: Tautan },
-  Detail: { screen: Detail },
+  Galeri: { screen: DrawerNavigation },
+  Info: { screen: DrawerNavigation },
+  Profil: { screen: DrawerNavigation },
+  Tautan: { screen: DrawerNavigation },
+  Detail: { screen: DrawerNavigation },
+  Web: { screen: WebInterface }
 }, {
-  initialRouteName: 'Beranda',
+  initialRouteName: 'Tautan',
   navigationOptions: {
     headerStyle: {
       backgroundColor: '#00aced',

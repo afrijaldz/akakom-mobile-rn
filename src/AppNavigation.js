@@ -9,6 +9,7 @@ import Galeri from './pages/Galeri';
 import Info from './pages/Info';
 import Profil from './pages/Profil';
 import Tautan from './pages/Tautan';
+import Detail from './pages/Detail';
 
 const { width: viewPortWidth, height: viewPortHeight } = Dimensions.get('window');
 
@@ -33,13 +34,14 @@ const AppNavigation = StackNavigator({
   Info: { screen: Info },
   Profil: { screen: Profil },
   Tautan: { screen: Tautan },
+  Detail: { screen: Detail },
 }, {
   initialRouteName: 'Beranda',
   navigationOptions: {
     headerStyle: {
       backgroundColor: '#00aced',
-      color: '#fff',
     },
+    headerTintColor: '#fff',
   }
 });
 

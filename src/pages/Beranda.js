@@ -5,6 +5,7 @@ import beranda from '../data/beranda';
 
 class Beranda extends Component {  
   constructor(props) {
+    console.log(props);
     super(props);
 
     this.state = {
@@ -20,7 +21,6 @@ class Beranda extends Component {
       color='#00aced' />
     ),
     headerTitle: 'Beranda',
-    // headerLeft: <Icon iconStyle={{ paddingLeft: 10 }} name="menu" onPress={() => this.props.navigation.navigate('DrawerToggle')} />
   }
 
   componentWillMount() {
@@ -37,9 +37,14 @@ class Beranda extends Component {
       <Card
         title={item.title}
         image={{ uri: item.image}}>
-        <Text style={{marginBottom: 10}}>
-          {item.content}
-        </Text>
+        <View>
+          <Text style={{marginBottom: 10}}>
+            {item.content}
+          </Text>
+          <Text style={{ color: '#03A9F4' }} onPress={() => this.props.navigation.navigate('Detail', { data: item })}>
+            Baca selengkapnya...
+          </Text>
+        </View>
       </Card>
     );
   }

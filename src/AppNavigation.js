@@ -1,6 +1,7 @@
 import { React } from 'react';
 import { Dimensions } from 'react-native';
 import { StackNavigator, DrawerNavigator } from 'react-navigation';
+import { Icon } from 'react-native-elements';
 import config from './config';
 
 import Beranda from './pages/Beranda';
@@ -34,6 +35,11 @@ const AppNavigation = StackNavigator({
   Tautan: { screen: Tautan },
 }, {
   initialRouteName: 'Beranda',
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: '#00aced',
+    },
+  }
 });
 
 export default AppNavigation;

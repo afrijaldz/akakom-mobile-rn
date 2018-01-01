@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, Image } from 'react-native';
-import { Card } from 'react-native-elements';
+import { Card, Button, Icon } from 'react-native-elements';
 import beranda from '../data/beranda';
 
 class Beranda extends Component {  
@@ -13,8 +13,14 @@ class Beranda extends Component {
   }
 
   static navigationOptions = {
-    drawerLabel: 'Home',
-  };
+    drawerLabel: 'Beranda',
+    drawerIcon:  (
+      <Icon
+      name='home'
+      color='#00aced' />
+    ),
+    // headerLeft: <Icon iconStyle={{ paddingLeft: 10 }} name="menu" onPress={() => this.props.navigation.navigate('DrawerToggle')} />
+  }
 
   componentWillMount() {
     this.setState({ data: beranda });
@@ -25,20 +31,25 @@ class Beranda extends Component {
     console.log(this.state.data);
   }
 
+  renderBeranda(item, index) {
+    return (
+      <Card
+        title={item.title}
+        image={{ uri: item.image}}>
+        <Text style={{marginBottom: 10}}>
+          {item.content}
+        </Text>
+      </Card>
+    );
+  }
+
   render() {
     return (
       <View>
         <FlatList
           data={this.state.data}
           keyExtractor={(item, key) => key}
-          renderItem={({ item, index }) => (
-            <Card>
-              <Image source={{ uri: item.image}} style={{ width: 100, height: 100 }} />
-              <Text>
-                {item.content}
-              </Text>
-            </Card>
-          )}
+          renderItem={({ item, index }) => this.renderBeranda(item, index)}
         />
       </View>
     );

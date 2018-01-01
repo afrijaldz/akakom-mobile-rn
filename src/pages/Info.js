@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 class Info extends Component {
   constructor(props) {
@@ -8,6 +9,15 @@ class Info extends Component {
     this.state = {
 
     }
+  }
+
+  static navigationOptions = {
+    drawerLabel: 'Info',
+    drawerIcon:  (
+      <Icon
+      name='info-outline'
+      color='#00aced' />
+    ),
   }
 
   render() {

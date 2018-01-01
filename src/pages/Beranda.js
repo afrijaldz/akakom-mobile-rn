@@ -23,6 +23,7 @@ class Beranda extends Component {
     headerTitle: 'Beranda',
     headerStyle: {
       elevation: 0,
+      marginHorizontal: 0,
     },
     headerLeft: <Icon name="menu" color='#fff' iconStyle={{ paddingLeft: 10 }} onPress={() => navigation.navigate('DrawerToggle')} />
   })

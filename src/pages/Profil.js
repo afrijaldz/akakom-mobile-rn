@@ -33,9 +33,8 @@ class Profil extends Component {
     return (
       <ScrollView>
         <View>
-
           <Card>
-            <Text style={{ fontSize: 24 }}>Profil AKAKOM</Text>
+            <Text style={{ fontSize: 24, marginBottom: 10 }}>Profil AKAKOM</Text>
             <View style={{ alignItems: 'center' }}>
               <Image
                 source={{
@@ -49,6 +48,22 @@ class Profil extends Component {
             </View>
               <Text>
                 {profil.profil}
+              </Text>
+          </Card>
+          <Card>
+            <Text style={{ fontSize: 24, marginBottom: 10 }}>Visi</Text>
+            <View style={{ alignItems: 'center' }}>
+            </View>
+              <Text>
+                {profil.visi}
+              </Text>
+          </Card>
+          <Card>
+            <Text style={{ fontSize: 24, marginBottom: 10 }}>Misi</Text>
+            <View style={{ alignItems: 'center' }}>
+            </View>
+              <Text>
+                {profil.misi}
               </Text>
           </Card>
         </View>

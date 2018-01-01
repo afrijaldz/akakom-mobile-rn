@@ -24,8 +24,10 @@ const styles = {
     shadowOpacity: 0.1,
     shadowRadius: 2,
     elevation: 1,
-    margin: 5,
-    padding: 5,
+    marginRight: 15,
+    marginLeft: 15,
+    marginTop: 10,
+    padding: 15,
   }
 }
 

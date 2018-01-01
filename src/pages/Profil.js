@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { Card } from '../components';
+import profil from '../data/profil';
 
 class Profil extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class Profil extends Component {
     }
   }
 
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     drawerLabel: 'Profil',
     drawerIcon:  (
       <Icon
@@ -19,15 +21,38 @@ class Profil extends Component {
       type='entypo'
       color='#00aced' />
     ),
-  }
+    headerTitle: 'Profil',
+    headerStyle: {
+      elevation: 0,
+      marginHorizontal: 0,
+    },
+    headerLeft: <Icon name="menu" color='#fff' iconStyle={{ paddingLeft: 10 }} onPress={() => navigation.navigate('DrawerToggle')} />
+  })
 
   render() {
     return (
-      <View>
-        <Text>
-          Okeee
-        </Text>
-      </View>
+      <ScrollView>
+        <View>
+
+          <Card>
+            <Text style={{ fontSize: 24 }}>Profil AKAKOM</Text>
+            <View style={{ alignItems: 'center' }}>
+              <Image
+                source={{
+                  uri: 'http://akakom.000webhostapp.com/images/logoemas.jpg'
+                }}
+                style={{
+                  width: 100,
+                  height: 100,
+                }}
+              />
+            </View>
+              <Text>
+                {profil.profil}
+              </Text>
+          </Card>
+        </View>
+      </ScrollView>
     );
   }
 }

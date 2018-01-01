@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { Card } from '../components';
 
 class Info extends Component {
   constructor(props) {
@@ -22,11 +23,28 @@ class Info extends Component {
 
   render() {
     return (
-      <View>
-        <Text>
-          Oke
-        </Text>
-      </View>
+      <ScrollView>
+        <View>
+
+          <Card>
+            <Text style={{ fontSize: 24 }}>Profil AKAKOM</Text>
+            <View style={{ alignItems: 'center' }}>
+              <Image
+                source={{
+                  uri: 'http://akakom.000webhostapp.com/images/logoemas.jpg'
+                }}
+                style={{
+                  width: 100,
+                  height: 100,
+                }}
+              />
+            </View>
+              <Text>
+              
+              </Text>
+          </Card>
+        </View>
+      </ScrollView>
     );
   }
 }

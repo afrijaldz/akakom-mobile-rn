@@ -26,8 +26,6 @@ const styles = {
     elevation: 1,
     margin: 5,
     padding: 5,
-    width: viewPortWidth,
-    // height: viewPortHeight / 4.5,
   }
 }
 

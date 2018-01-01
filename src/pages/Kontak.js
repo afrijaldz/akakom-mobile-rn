@@ -5,13 +5,13 @@ import { Icon, Card, Button } from 'react-native-elements';
 class Tautan extends Component {
 
   static navigationOptions = ({ navigation }) => ({
-    drawerLabel: 'Tautan',
+    drawerLabel: 'Kontak',
     drawerIcon:  (
       <Icon
       name='link'
       color='#00aced' />
     ),
-    headerTitle: 'Tautan',
+    headerTitle: 'Kontak',
     headerStyle: {
       elevation: 0,
       marginHorizontal: 0,

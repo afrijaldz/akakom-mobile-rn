@@ -38,7 +38,7 @@ class Profil extends Component {
             <View style={{ alignItems: 'center' }}>
               <Image
                 source={{
-                  uri: 'http://akakom.000webhostapp.com/images/logoemas.jpg'
+                  uri: 'https://www.akakom.ac.id/images/logo_akakom_.jpg'
                 }}
                 style={{
                   width: 100,

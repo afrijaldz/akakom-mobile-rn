@@ -1,48 +1,53 @@
 import React, { Component } from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
-import { Icon } from 'react-native-elements';
-import { Card } from '../components';
+import { View, Text, Image, ScrollView, FlatList } from 'react-native';
+import { Icon, Card } from 'react-native-elements';
+import info from '../data/info';
 
 class Info extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-
+      data: '',
     }
   }
 
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     drawerLabel: 'Info',
     drawerIcon:  (
       <Icon
       name='info-outline'
       color='#00aced' />
     ),
+    headerTitle: 'Info',
+    headerStyle: {
+      elevation: 0,
+      marginHorizontal: 0,
+    },
+    headerLeft: <Icon name="menu" color='#fff' iconStyle={{ paddingLeft: 10 }} onPress={() => navigation.navigate('DrawerToggle')} />
+  })
+
+  componentDidMount() {
+    this.setState({ data: info.data });
+  }
+
+  renderItem(item, index) {
+    return (
+      <Card title={item.title}>
+        <Text>{item.content}</Text>
+      </Card>
+    );
   }
 
   render() {
     return (
       <ScrollView>
-        <View>
-
-          <Card>
-            <Text style={{ fontSize: 24 }}>Profil AKAKOM</Text>
-            <View style={{ alignItems: 'center' }}>
-              <Image
-                source={{
-                  uri: 'http://akakom.000webhostapp.com/images/logoemas.jpg'
-                }}
-                style={{
-                  width: 100,
-                  height: 100,
-                }}
-              />
-            </View>
-              <Text>
-              
-              </Text>
-          </Card>
+        <View style={{ marginBottom: 20 }}>
+          <FlatList
+            data={this.state.data}
+            keyExtractor={( data, index ) => index}
+            renderItem={({ item, index }) => this.renderItem(item, index)}
+          />
         </View>
       </ScrollView>
     );

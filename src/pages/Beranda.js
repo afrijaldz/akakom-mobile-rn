@@ -5,7 +5,7 @@ import beranda from '../data/beranda';
 
 class Beranda extends Component {  
   constructor(props) {
-    console.log(props);
+    // console.log('ini props', props.navigation.navigate('DrawerOpen'));
     super(props);
 
     this.state = {
@@ -13,7 +13,7 @@ class Beranda extends Component {
     }
   }
 
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     drawerLabel: 'Beranda',
     drawerIcon:  (
       <Icon
@@ -21,7 +21,11 @@ class Beranda extends Component {
       color='#00aced' />
     ),
     headerTitle: 'Beranda',
-  }
+    headerStyle: {
+      elevation: 0,
+    },
+    headerLeft: <Icon name="menu" color='#fff' iconStyle={{ paddingLeft: 10 }} onPress={() => navigation.navigate('DrawerToggle')} />
+  })
 
   componentWillMount() {
     this.setState({ data: beranda });
@@ -51,7 +55,7 @@ class Beranda extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{ paddingBottom: 10 }}>
         <FlatList
           data={this.state.data}
           keyExtractor={(item, key) => key}

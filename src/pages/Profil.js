@@ -32,7 +32,7 @@ class Profil extends Component {
   render() {
     return (
       <ScrollView>
-        <View>
+        <View style={{ marginBottom: 30 }}>
           <Card>
             <Text style={{ fontSize: 24, marginBottom: 10 }}>Profil AKAKOM</Text>
             <View style={{ alignItems: 'center' }}>
